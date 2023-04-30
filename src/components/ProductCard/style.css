@@ -1,0 +1,26 @@
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+  padding: 16px;
+}
+
+.product-card__value1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.product-card__value2 {
+  color: #666;
+  margin: 0;
+}
+
+.product-card__value3 {
+  color: #666;
+  margin: 0;
+}
+
+.product-card__value4 {
+  color: #666;
+  margin: 0;
+}
