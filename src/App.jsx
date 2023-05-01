@@ -4,7 +4,6 @@ import { products as productList } from "./data"
 import { useState } from 'react'
 import './App.css'
 
-
 function App() {
 
   const [products, setProducts] = useState(productList)
