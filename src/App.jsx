@@ -1,11 +1,18 @@
+import Header from './components/Header/Header'
+import ProductList from './components/ProductList/ProductList'
+
 import { useState } from 'react'
 import './App.css'
+
 
 function App() {
 
   return (
     <>
-      <p>Product Manager App</p>
+      <Header />
+      <div className='main-container'>
+        <ProductList />
+      </div>
     </>
   )
 }

@@ -1,0 +1,13 @@
+.product-list li {
+    background-color: yellow;
+    height: 100%;
+}
+
+.detail-type1 {
+    height: 50%;
+    color: red;
+}
+
+.product-list ul {
+    list-style: none;
+}
