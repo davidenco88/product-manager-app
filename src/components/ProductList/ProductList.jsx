@@ -2,14 +2,14 @@ import './ProductList.css'
 import { FaTrash } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 
-function ProductList({ products, onDeleteProduct}) {
+function ProductList({ products, onDeleteProduct, onSelectProduct}) {
 
-  const handleDelete = (event, key) => {
-    onDeleteProduct(key);
+  const handleDelete = ( productId) => {
+    onDeleteProduct(productId);
   }
 
-  const handleEdit = (event, key) => {
-    console.log('Edit');
+  const handleEdit = ( product) => {
+    onSelectProduct(product)
   }
 
   return (
@@ -35,10 +35,10 @@ function ProductList({ products, onDeleteProduct}) {
             <div className="detail-type2"><span>{product.category}</span></div>
             <div className="detail-type2"><span>{product.price}</span></div>
             <div className="detail-type3">
-              <span className='icons' onClick={event => handleEdit(event, product.id)}>
+              <span className='icons' onClick={() => handleEdit( product)}>
                 <FaEdit />
               </span>
-              <span className='icons' onClick={event => handleDelete(event, product.id)}>
+              <span className='icons' onClick={() => handleDelete( product.id)}>
                 <FaTrash />
               </span>
             </div>

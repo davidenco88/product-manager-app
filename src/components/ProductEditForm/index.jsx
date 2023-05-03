@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import './ProductForm.css';
 
-const ProductForm = ({onAddContac}) => {
+const ProductEditForm = ({productEdit}) => {
   const [product, setProduct] = useState({});
-
+  console.log(productEdit)
   const handleChange = (event) => {
     const {name, value} = event.target;
       setProduct({
@@ -33,6 +33,7 @@ const ProductForm = ({onAddContac}) => {
             <input
               type="text"
               name="name"
+              value={productEdit.name}
               placeholder='Enter product name'
               className="product-form__input"
               required
@@ -46,6 +47,7 @@ const ProductForm = ({onAddContac}) => {
             <input
               type="text"
               name="color"
+              value={productEdit.color}
               placeholder='Enter product color'
               className="product-form__input"
               required
@@ -59,6 +61,7 @@ const ProductForm = ({onAddContac}) => {
             <input
               type="text"
               name="category"
+              value={productEdit.category}
               placeholder='Enter product category '
               className="product-form__input"
               required
@@ -70,8 +73,9 @@ const ProductForm = ({onAddContac}) => {
               price:
             </label>
             <input
-              type="number"
+              type="String"
               name="price"
+              value={productEdit.price}
               placeholder='Enter price value'
               className="product-form__input"
               required
@@ -81,7 +85,7 @@ const ProductForm = ({onAddContac}) => {
         </div>
 
         <button type="submit" className="product-form__button">
-          Agregar
+          Editar
         </button>
       </form>
     </div>
@@ -89,4 +93,4 @@ const ProductForm = ({onAddContac}) => {
   );
 };
 
-export default ProductForm;
+export default ProductEditForm;
