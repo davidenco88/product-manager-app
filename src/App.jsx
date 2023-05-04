@@ -21,7 +21,7 @@ function App() {
     setProducts(productsFilter);
   }
    const onSelectProduct = (productEdit) => {
-    //console.log(productEdit)
+    console.log(productEdit)
     setProduct(productEdit);
   }
   console.log(product)

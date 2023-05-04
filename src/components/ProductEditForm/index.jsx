@@ -7,6 +7,17 @@ const ProductEditForm = ({productEdit}) => {
   console.log(productEdit)
   const handleChange = (event) => {
     const {name, value} = event.target;
+      /*  //Find index of specific object using findIndex method.    
+        objIndex = myArray.findIndex((obj => obj.id == 1));
+
+//Log object to Console.
+console.log("Before update: ", myArray[objIndex])
+
+//Update object's name property.
+      myArray[objIndex].name = "Laila"
+
+            //Log object to console again.
+     console.log("After update: ", myArray[objIndex])*/
       setProduct({
         ... product,
         [name]:value,
@@ -33,7 +44,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="name"
-              value={productEdit.name}
+              defaultValue={productEdit.name}
               placeholder='Enter product name'
               className="product-form__input"
               required
@@ -47,7 +58,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="color"
-              value={productEdit.color}
+              defaultValue={productEdit.color}
               placeholder='Enter product color'
               className="product-form__input"
               required
@@ -61,7 +72,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="category"
-              value={productEdit.category}
+              defaultValue={productEdit.category}
               placeholder='Enter product category '
               className="product-form__input"
               required
@@ -75,7 +86,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="String"
               name="price"
-              value={productEdit.price}
+              defaultValue={productEdit.price}
               placeholder='Enter price value'
               className="product-form__input"
               required
