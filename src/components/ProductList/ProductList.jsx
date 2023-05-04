@@ -9,6 +9,7 @@ function ProductList({ products, onDeleteProduct, onSelectProduct}) {
   }
 
   const handleEdit = ( product) => {
+    //console.log(product);
     onSelectProduct(product)
   }
 

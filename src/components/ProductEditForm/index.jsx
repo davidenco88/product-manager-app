@@ -2,20 +2,22 @@ import { useState } from 'react';
 
 import './ProductForm.css';
 
-const ProductEditForm = ({productEdit}) => {
-  const [product, setProduct] = useState({});
-  console.log(productEdit)
+const ProductEditForm = ({productEdit, onEditProduct}) => {
+  const [product, setProduct] = useState(productEdit);
   const handleChange = (event) => {
+    //setProduct(productEdit);
+    console.log(product)
     const {name, value} = event.target;
       setProduct({
-        ... product,
+        ... productEdit,
         [name]:value,
       })
+      console.log(product);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onAddContac(product)
+    onEditProduct(product)
 
     // Clear form
     setProduct({})
@@ -33,7 +35,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="name"
-              value={productEdit.name}
+              defaultValue={productEdit.name}
               placeholder='Enter product name'
               className="product-form__input"
               required
@@ -47,7 +49,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="color"
-              value={productEdit.color}
+              defaultValue={productEdit.color}
               placeholder='Enter product color'
               className="product-form__input"
               required
@@ -61,7 +63,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="text"
               name="category"
-              value={productEdit.category}
+              defaultValue={productEdit.category}
               placeholder='Enter product category '
               className="product-form__input"
               required
@@ -75,7 +77,7 @@ const ProductEditForm = ({productEdit}) => {
             <input
               type="String"
               name="price"
-              value={productEdit.price}
+              defaultValue={productEdit.price}
               placeholder='Enter price value'
               className="product-form__input"
               required

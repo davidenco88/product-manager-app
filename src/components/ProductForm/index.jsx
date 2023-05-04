@@ -14,7 +14,7 @@ const ProductForm = ({onAddContac}) => {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    
     onAddContac(product)
 
     // Clear form
