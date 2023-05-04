@@ -9,7 +9,8 @@ import './App.css'
 function App() {
 
   const [products, setProducts] = useState(productList)
-  const [product, setProduct] = useState({}) 
+  const [product, setProduct] = useState({})
+
   const handleAddProduct = (newProduct) => {
     newProduct.id = new Date().getTime();
     console.log(newProduct)
@@ -24,17 +25,20 @@ function App() {
   
     setProduct(productEdit);
   }
-  const onEditProduct = (event) => {
-    //const productsFilter = products.filter((product) => product.id );
-    console.log("lo que llega" )
-    console.log( event)
-    const {name, value} = event;
-      setProduct({
-        ... product,
-        [name]:value,
-      })
-      //<ProductEditForm productEdit={product} onEdit={onEditProduct} />
+
+  const onEditProduct = (myProduct) => {
+    const productIndex = products.findIndex((product) => product.id === myProduct.id);
+    const newProducts = [...products];
+
+    newProducts[productIndex] = myProduct;    
+    setProducts(newProducts);
   };
+
+  //let showForm = true;
+
+  //showForm ? <ProductForm onAddContac={handleAddProduct} /> 
+  //: <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />;
+
   return (
     <>
       <Header />

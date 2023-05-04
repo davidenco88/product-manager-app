@@ -1,27 +1,26 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import './ProductForm.css';
 
 const ProductEditForm = ({productEdit, onEditProduct}) => {
   const [product, setProduct] = useState(productEdit);
+
   const handleChange = (event) => {
-    //setProduct(productEdit);
-    console.log(product)
     const {name, value} = event.target;
       setProduct({
-        ... productEdit,
+        ... product,
         [name]:value,
       })
-      console.log(product);
   };
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    onEditProduct(product)
-
-    // Clear form
-    setProduct({})
+    onEditProduct(product);
   };
+
+  useEffect(() => {
+    setProduct(productEdit);
+  },[productEdit]);
 
   return (
     <div className='container'>
