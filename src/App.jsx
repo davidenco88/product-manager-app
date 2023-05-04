@@ -21,17 +21,27 @@ function App() {
     setProducts(productsFilter);
   }
    const onSelectProduct = (productEdit) => {
-    console.log(productEdit)
+  
     setProduct(productEdit);
   }
-  console.log(product)
+  const onEditProduct = (event) => {
+    //const productsFilter = products.filter((product) => product.id );
+    console.log("lo que llega" )
+    console.log( event)
+    const {name, value} = event;
+      setProduct({
+        ... product,
+        [name]:value,
+      })
+      //<ProductEditForm productEdit={product} onEdit={onEditProduct} />
+  };
   return (
     <>
       <Header />
       <div className='main-container'>
         <ProductList products={products} onDeleteProduct={onDeleteProduct} onSelectProduct ={ onSelectProduct}/>
         <ProductForm onAddContac={handleAddProduct} />
-        <ProductEditForm productEdit={product} />
+        <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />
       </div>
     </>
   )

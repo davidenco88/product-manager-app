@@ -2,31 +2,22 @@ import { useState } from 'react';
 
 import './ProductForm.css';
 
-const ProductEditForm = ({productEdit}) => {
-  const [product, setProduct] = useState({});
-  console.log(productEdit)
+const ProductEditForm = ({productEdit, onEditProduct}) => {
+  const [product, setProduct] = useState(productEdit);
   const handleChange = (event) => {
+    //setProduct(productEdit);
+    console.log(product)
     const {name, value} = event.target;
-      /*  //Find index of specific object using findIndex method.    
-        objIndex = myArray.findIndex((obj => obj.id == 1));
-
-//Log object to Console.
-console.log("Before update: ", myArray[objIndex])
-
-//Update object's name property.
-      myArray[objIndex].name = "Laila"
-
-            //Log object to console again.
-     console.log("After update: ", myArray[objIndex])*/
       setProduct({
-        ... product,
+        ... productEdit,
         [name]:value,
       })
+      console.log(product);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    onAddContac(product)
+    onEditProduct(product)
 
     // Clear form
     setProduct({})
