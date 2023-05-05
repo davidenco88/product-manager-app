@@ -34,8 +34,9 @@ function App() {
     setProducts(newProducts);
   };
 
-  let showForm = false;
-  const  showedContent = showForm ? <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />:<ProductForm onAddContac={handleAddProduct}  />
+  let showForm = true;
+  const  showedContent = showForm ?  <ProductForm onAddContac={handleAddProduct}  /> : <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />
+  
 
   //showForm ? <ProductForm onAddContac={handleAddProduct} /> 
   //: <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />;
