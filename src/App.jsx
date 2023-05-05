@@ -34,18 +34,20 @@ function App() {
     setProducts(newProducts);
   };
 
-  //let showForm = true;
+  let showForm = false;
+  const  showedContent = showForm ? <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />:<ProductForm onAddContac={handleAddProduct}  />
 
   //showForm ? <ProductForm onAddContac={handleAddProduct} /> 
   //: <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />;
+  // <ProductForm onAddContac={handleAddProduct}  />
+  //<ProductEditForm productEdit={product} onEditProduct={onEditProduct} />
 
   return (
     <>
       <Header />
       <div className='main-container'>
         <ProductList products={products} onDeleteProduct={onDeleteProduct} onSelectProduct ={ onSelectProduct}/>
-        <ProductForm onAddContac={handleAddProduct} />
-        <ProductEditForm productEdit={product} onEditProduct={onEditProduct} />
+        {showedContent}
       </div>
     </>
   )

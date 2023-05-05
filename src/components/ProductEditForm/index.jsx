@@ -24,7 +24,6 @@ const ProductEditForm = ({productEdit, onEditProduct}) => {
 
   return (
     <div className='container'>
-      <h2 className="product-form__title">Agregar producto</h2>
       <form className="product-form" onSubmit={handleSubmit}>
         <div>
           <div className="product-form__column">
